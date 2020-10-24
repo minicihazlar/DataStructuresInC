@@ -18,6 +18,20 @@ void my_llist_ctor(my_llist_t *list, DATA data)
 
 /*-------------------------------------------------------------------*/
 
+void my_llist_dtor(my_llist_t *list)
+{
+    my_llist_t list_local;
+
+    while(*list != NULL)
+    {
+        list_local = (*list)->next;
+        free(*list);
+        *list = list_local;
+    }
+}
+
+/*-------------------------------------------------------------------*/
+
 int my_llist_get_size(my_llist_t *list)
 {
     // Check if the list is initialised
