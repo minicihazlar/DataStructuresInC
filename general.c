@@ -1,5 +1,3 @@
-#include "stdafx.h"
-
 // Greatest common divisor
 int general_gcd(int x, int y)
 {
@@ -29,4 +27,3 @@ double general_sqrt(int val)
     }
     return i;
 }
-
