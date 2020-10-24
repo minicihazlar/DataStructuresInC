@@ -13,6 +13,7 @@ typedef struct my_llist_s * my_llist_t;
 
 // Linked list handling functions
 void my_llist_ctor(my_llist_t *, DATA);
+void my_llist_dtor(my_llist_t *);
 int my_llist_get_size(my_llist_t *);
 int my_llist_push_head(my_llist_t *, DATA);
 int my_llist_push_end(my_llist_t *, DATA);
