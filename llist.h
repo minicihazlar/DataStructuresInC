@@ -1,16 +1,28 @@
-#pragma once
-#include <stdint.h>
+#ifndef __MY_LLIST_H
+#define __MY_LLIST_H
 
-typedef struct llist_s {
-    struct llist_s  *next;
-    int             data;
-} llist_t;
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-uint32_t llist_get_size(llist_t **list);
-uint32_t llist_push_head(llist_t **list, int data);
-uint32_t llist_push_end(llist_t **list, int data);
-uint32_t llist_pop_head(llist_t **list, int *data);
-uint32_t llist_pop_end(llist_t **list, int *data);
-uint32_t llist_pop_index(llist_t **list, int *data, uint32_t index);
-void llist_reverse(llist_t **list);
-void llist_print(llist_t **list);
+// Change the data type to be held in the linked list here.
+typedef int DATA;
+
+// Forward declaration of the linked list data structure, implementation is hided
+typedef struct my_llist_s * my_llist_t; 
+
+// Linked list handling functions
+void my_llist_ctor(my_llist_t *, DATA);
+int my_llist_get_size(my_llist_t *);
+int my_llist_push_head(my_llist_t *, DATA);
+int my_llist_push_end(my_llist_t *, DATA);
+int my_llist_pop_head(my_llist_t *, DATA *);
+int my_llist_pop_end(my_llist_t *, DATA *);
+int my_llist_pop_at(my_llist_t *, DATA *, int);
+void my_llist_reverse(my_llist_t *);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // __MY_LLIST_H
