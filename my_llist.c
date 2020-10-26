@@ -9,24 +9,24 @@ static struct my_llist_s {
 
 /*-------------------------------------------------------------------*/
 
-void my_llist_ctor(my_llist_t *list, DATA data)
+my_llist_t * my_llist_ctor(DATA data)
 {
-    my_llist_t list_local = calloc(1, sizeof(struct my_llist_s));
-    list_local->data = data;
-    *list = list_local;
+    my_llist_t *list = calloc(1, sizeof(my_llist_t));
+    list->data = data;
+    return list;
 }
 
 /*-------------------------------------------------------------------*/
 
 void my_llist_dtor(my_llist_t *list)
 {
-    my_llist_t list_local;
+    my_llist_t *list_local;
 
-    while(*list != NULL)
+    while(list != NULL)
     {
-        list_local = (*list)->next;
-        free(*list);
-        *list = list_local;
+        list_local = list->next;
+        free(list);
+        list = list_local;
     }
 }
 
@@ -35,12 +35,12 @@ void my_llist_dtor(my_llist_t *list)
 int my_llist_get_size(my_llist_t *list)
 {
     // Check if the list is initialised
-    if(*list == NULL)
+    if(list == NULL)
     {
-        return -1;
+        return 0;
     }
     int size = 1;
-    my_llist_t list_local = *list;
+    my_llist_t *list_local = list;
     while(list_local->next != NULL)
     {
         ++size;
@@ -51,7 +51,7 @@ int my_llist_get_size(my_llist_t *list)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_push_head(my_llist_t *list, DATA data)
+int my_llist_push_head(my_llist_t **list, DATA data)
 {
     // Check if the list is initialised
     if(*list == NULL)
@@ -60,7 +60,7 @@ int my_llist_push_head(my_llist_t *list, DATA data)
     }
     else
     {
-        my_llist_t list_local = *list;
+        my_llist_t *list_local = *list;
         *list = calloc(1, sizeof(struct my_llist_s));
         if(*list == NULL)
         {
@@ -75,7 +75,7 @@ int my_llist_push_head(my_llist_t *list, DATA data)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_push_end(my_llist_t *list, DATA data)
+int my_llist_push_end(my_llist_t **list, DATA data)
 {
     // Check if the list is initialised
     if(*list == NULL)
@@ -84,7 +84,7 @@ int my_llist_push_end(my_llist_t *list, DATA data)
     }
     else
     {
-        my_llist_t list_local = *list;
+        my_llist_t *list_local = *list;
         while(list_local->next != NULL)
         {
             list_local = list_local->next;
@@ -102,14 +102,14 @@ int my_llist_push_end(my_llist_t *list, DATA data)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_pop_head(my_llist_t *list, DATA *data)
+int my_llist_pop_head(my_llist_t **list, DATA *data)
 {
     // Check if the list is initialised
     if(*list == NULL)
     {
         return -1;
     }
-    my_llist_t list_local = *list;
+    my_llist_t *list_local = *list;
     *data = (*list)->data;
     *list = (*list)->next;
     free(list_local);
@@ -118,7 +118,7 @@ int my_llist_pop_head(my_llist_t *list, DATA *data)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_pop_end(my_llist_t *list, DATA *data)
+int my_llist_pop_end(my_llist_t **list, DATA *data)
 {
     // Check if the list is initialised
     if(*list == NULL)
@@ -133,8 +133,8 @@ int my_llist_pop_end(my_llist_t *list, DATA *data)
     }
     else
     {
-        my_llist_t list_local = *list;
-        my_llist_t list_prev = *list;
+        my_llist_t *list_local = *list;
+        my_llist_t *list_prev = *list;
 
         while(list_local->next != NULL)
         {
@@ -150,7 +150,7 @@ int my_llist_pop_end(my_llist_t *list, DATA *data)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_pop_at(my_llist_t *list, DATA *data, int index)
+int my_llist_pop_at(my_llist_t **list, DATA *data, int index)
 {
      int i = my_llist_get_size(list);
 
@@ -173,8 +173,8 @@ int my_llist_pop_at(my_llist_t *list, DATA *data, int index)
     }
     else
     {
-        my_llist_t list_local = *list;
-        my_llist_t list_prev = *list;
+        my_llist_t *list_local = *list;
+        my_llist_t *list_prev = *list;
         for(i = 1; i < index; ++i)
         {
             list_prev = list_local;
@@ -189,16 +189,16 @@ int my_llist_pop_at(my_llist_t *list, DATA *data, int index)
 
 /*-------------------------------------------------------------------*/
 
-void my_llist_reverse(my_llist_t *list)
+void my_llist_reverse(my_llist_t **list)
 {    
     if(*list != NULL)
     {
-        my_llist_t head = NULL;
-        my_llist_t orig = *list;
+        my_llist_t *head = NULL;
+        my_llist_t *orig = *list;
 
         while (orig != NULL)
         {
-            my_llist_t orig_next = orig->next;
+            my_llist_t *orig_next = orig->next;
 
             orig->next = head;
             head = orig;
