@@ -4,12 +4,12 @@
 // Linked list structure
 static struct my_llist_s {
     struct my_llist_s  *next;
-    DATA                data;
+    DATA_TYPE_t                data;
 };
 
 /*-------------------------------------------------------------------*/
 
-my_llist_t * my_llist_ctor(DATA data)
+my_llist_t * my_llist_ctor(DATA_TYPE_t data)
 {
     my_llist_t *list = calloc(1, sizeof(my_llist_t));
     list->data = data;
@@ -51,7 +51,7 @@ int my_llist_get_size(my_llist_t *list)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_push_head(my_llist_t **list, DATA data)
+int my_llist_push_head(my_llist_t **list, DATA_TYPE_t data)
 {
     // Check if the list is initialised
     if(*list == NULL)
@@ -75,7 +75,7 @@ int my_llist_push_head(my_llist_t **list, DATA data)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_push_end(my_llist_t **list, DATA data)
+int my_llist_push_end(my_llist_t **list, DATA_TYPE_t data)
 {
     // Check if the list is initialised
     if(*list == NULL)
@@ -102,7 +102,7 @@ int my_llist_push_end(my_llist_t **list, DATA data)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_pop_head(my_llist_t **list, DATA *data)
+int my_llist_pop_head(my_llist_t **list, DATA_TYPE_t *data)
 {
     // Check if the list is initialised
     if(*list == NULL)
@@ -118,7 +118,7 @@ int my_llist_pop_head(my_llist_t **list, DATA *data)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_pop_end(my_llist_t **list, DATA *data)
+int my_llist_pop_end(my_llist_t **list, DATA_TYPE_t *data)
 {
     // Check if the list is initialised
     if(*list == NULL)
@@ -150,7 +150,7 @@ int my_llist_pop_end(my_llist_t **list, DATA *data)
 
 /*-------------------------------------------------------------------*/
 
-int my_llist_pop_at(my_llist_t **list, DATA *data, int index)
+int my_llist_pop_at(my_llist_t **list, DATA_TYPE_t *data, int index)
 {
      int i = my_llist_get_size(list);
 
