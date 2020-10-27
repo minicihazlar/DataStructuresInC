@@ -4,7 +4,7 @@
 // Linked list structure
 static struct my_llist_s {
     struct my_llist_s  *next;
-    DATA_TYPE_t                data;
+    DATA_TYPE_t         data;
 };
 
 /*-------------------------------------------------------------------*/
