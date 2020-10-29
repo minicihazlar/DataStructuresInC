@@ -52,7 +52,6 @@ void my_llist_dtor(my_llist_t *list)
 
 int my_llist_get_size(my_llist_t *list)
 {
-    // Check if the list is initialised
     if(list == NULL)
     {
         return 0;
@@ -71,7 +70,6 @@ int my_llist_get_size(my_llist_t *list)
 
 int my_llist_push_head(my_llist_t **list, DATA_TYPE_t data)
 {
-    // Check if the list is initialised
     if(*list == NULL)
     {
         return -1;
@@ -95,7 +93,6 @@ int my_llist_push_head(my_llist_t **list, DATA_TYPE_t data)
 
 int my_llist_push_end(my_llist_t **list, DATA_TYPE_t data)
 {
-    // Check if the list is initialised
     if(*list == NULL)
     {
         return -1;
@@ -122,7 +119,6 @@ int my_llist_push_end(my_llist_t **list, DATA_TYPE_t data)
 
 int my_llist_pop_head(my_llist_t **list, DATA_TYPE_t *data)
 {
-    // Check if the list is initialised
     if(*list == NULL)
     {
         return -1;
@@ -138,7 +134,6 @@ int my_llist_pop_head(my_llist_t **list, DATA_TYPE_t *data)
 
 int my_llist_pop_end(my_llist_t **list, DATA_TYPE_t *data)
 {
-    // Check if the list is initialised
     if(*list == NULL)
     {
         return -1;
@@ -170,13 +165,13 @@ int my_llist_pop_end(my_llist_t **list, DATA_TYPE_t *data)
 
 int my_llist_pop_at(my_llist_t **list, DATA_TYPE_t *data, int index)
 {
-     int i = my_llist_get_size(list);
+    int i = 0;
 
-    // Check if the list is initialised
     if(*list == NULL)
     {
         return -1;
     }
+    i =  my_llist_get_size(list);
     if(index > i)
     {
         return -1;
