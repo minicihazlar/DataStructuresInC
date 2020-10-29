@@ -1,5 +1,7 @@
 # Data Structures In C
 
-  my_llist.c/h -> linked list implementation.
+  my_llist.c/h  -> Linked list implementation.
   
-  general.c/h  -> Implementation of some algorithms, like greatest common divisor, square root, etc.
+  my_dllist.c/h -> Double linked list implementation.
+  
+  general.c/h   -> Implementation of some algorithms, like greatest common divisor, square root, etc.
