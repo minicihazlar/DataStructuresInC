@@ -33,4 +33,4 @@ double general_sqrt(int);
 }
 #endif
 
-#endif // __GENERAL_H
+#endif
