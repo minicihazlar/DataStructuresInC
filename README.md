@@ -80,13 +80,3 @@
                   my_dllist_pop_head(list, &data); printf("%d\n", data);
 
                   my_dllist_dtor(list);
-  
-
-## Implementation of some algorithms
-### Greatest Common Divisor
-
-                  gcd(23, 3435);
-
-### Square Root
-
-                  sqrt(344554);
