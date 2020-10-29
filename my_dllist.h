@@ -46,4 +46,4 @@ void my_dllist_reverse(my_dllist_t *);
 }
 #endif
 
-#endif // __MY_LLIST_H
+#endif
