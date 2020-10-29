@@ -1,8 +1,7 @@
 # Data Structures In C
 
-## my_llist.c/h  -> Linked list implementation.
+## Linked List (my_llist)
 
-### Usage:
                   my_llist_t *list = my_llist_ctor();
                   int data = 0;
 
@@ -37,9 +36,9 @@
 
                   my_llist_dtor(list);
 
-## my_dllist.c/h -> Double linked list implementation.
-  
-### Usage:
+
+## Double Linked List (my_dllist)
+
                   my_dllist_t *list = my_dllist_ctor();
                   int data = 0;
 
@@ -82,4 +81,12 @@
 
                   my_dllist_dtor(list);
   
-## general.c/h   -> Implementation of some algorithms, like greatest common divisor, square root, etc.
+
+## Implementation of some algorithms
+### Greatest Common Divisor
+
+                  gcd(23, 3435);
+
+### Square Root
+
+                  sqrt(344554);
