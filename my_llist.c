@@ -171,7 +171,7 @@ int my_llist_pop_at(my_llist_t **list, DATA_TYPE_t *data, int index)
     {
         return -1;
     }
-    i =  my_llist_get_size(list);
+    i =  my_llist_get_size(*list);
     if(index > i)
     {
         return -1;
