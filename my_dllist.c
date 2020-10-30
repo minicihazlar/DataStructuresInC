@@ -197,7 +197,7 @@ int my_dllist_pop_at(my_dllist_t *list, DATA_TYPE_t *data, size_t index)
     {
         struct my_local_dllist_s *list_local = NULL;
 
-        if(index > (list->size / 2))
+        if(index > (list->size >> 1))
         {
             list_local = list->tail;
             size_t i = list->size;
