@@ -23,6 +23,8 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 extern "C" {
 #endif
 
+#include <stddef.h>
+
 // Change the data type to be held in the linked list here.
 typedef int DATA_TYPE_t;
 
