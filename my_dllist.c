@@ -259,7 +259,6 @@ void my_dllist_reverse(my_dllist_t *list)
     if((list != NULL) && (list->head != NULL) && (list->tail != NULL) && (list->size > 1))
     {
         struct my_local_dllist_s *head = NULL;
-        struct my_local_dllist_s *tail = NULL;
         struct my_local_dllist_s *orig = list->head;
 
         while (orig != NULL)
