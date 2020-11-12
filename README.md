@@ -3,7 +3,7 @@
 ## Linked List (my_llist)
 
                   my_llist_t *list = my_llist_ctor();
-                  int data = 0;
+                  DATA_TYPE_t data = 0;
 
                   my_llist_push_head(list, 1);
                   my_llist_push_head(list, 2);
@@ -40,7 +40,7 @@
 ## Double Linked List (my_dllist)
 
                   my_dllist_t *list = my_dllist_ctor();
-                  int data = 0;
+                  DATA_TYPE_t data = 0;
 
                   my_dllist_push_head(list, 1);
                   my_dllist_push_head(list, 2);
@@ -80,3 +80,28 @@
                   my_dllist_pop_head(list, &data); printf("%d\n", data);
 
                   my_dllist_dtor(list);
+
+
+## Dynamic Array (my_darray)
+
+                  my_darray_t *darray = my_darray_ctor(10);
+                  DATA_TYPE_t data = 0;
+
+                  my_darray_add_at(darray, 1, 0);
+                  my_darray_add_at(darray, 2, 1);
+                  my_darray_add_at(darray, 3, 2);
+                  my_darray_add_at(darray, 4, 3);
+                  my_darray_add_at(darray, 5, 4);
+                  my_darray_add_at(darray, 6, 5);
+                  my_darray_add_at(darray, 7, 6);
+                  my_darray_add_at(darray, 8, 7);
+                  my_darray_add_at(darray, 9, 8);
+                  my_darray_add_at(darray, 10, 9);
+
+                  my_darray_get_at(darray, &data, 0); printf("Data at index 0 is %d\n", data);
+                  my_darray_get_at(darray, &data, 4); printf("Data at index 4 is %d\n", data);
+                  my_darray_get_at(darray, &data, 7); printf("Data at index 7 is %d\n", data);
+                  my_darray_get_at(darray, &data, 9); printf("Data at index 9 is %d\n", data);    
+                  my_darray_get_at(darray, &data, 11); printf("Data at index 11 is %d\n", data); 
+
+                  my_darray_dtor(darray);
