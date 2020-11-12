@@ -105,3 +105,22 @@
                   my_darray_get_at(darray, &data, 11); printf("Data at index 11 is %d\n", data); 
 
                   my_darray_dtor(darray);
+
+
+## Stack (my_stack))
+
+                  my_stack_t *stack = my_stack_ctor();
+                  DATA_TYPE_t data = 0;
+
+                  my_stack_push(stack, 1);
+                  my_stack_push(stack, 2);
+                  my_stack_push(stack, 3);
+                  my_stack_push(stack, 4);
+                  my_stack_push(stack, 5);
+                  my_stack_pop(stack, &data); printf("Popped -> %d\n", data);
+                  my_stack_peek(stack, &data); printf("Peeked -> %d\n", data);
+                  while(!my_stack_is_empty(stack))
+                  {
+                      my_stack_pop(stack, &data); printf("Popped -> %d\n", data);
+                  }
+                  my_stack_dtor(stack);
