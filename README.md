@@ -107,7 +107,7 @@
                   my_darray_dtor(darray);
 
 
-## Stack (my_stack))
+## Stack (my_stack)
 
                   my_stack_t *stack = my_stack_ctor();
                   DATA_TYPE_t data = 0;
@@ -124,3 +124,22 @@
                       my_stack_pop(stack, &data); printf("Popped -> %d\n", data);
                   }
                   my_stack_dtor(stack);
+
+
+## Queue (my_queue)              
+
+                  my_queue_t *queue = my_queue_ctor();
+                  DATA_TYPE_t data = 0;
+
+                  my_queue_enqueue(queue, 1);
+                  my_queue_enqueue(queue, 2);
+                  my_queue_enqueue(queue, 3);
+                  my_queue_enqueue(queue, 4);
+                  my_queue_enqueue(queue, 5);
+                  my_queue_dequeue(queue, &data); printf("Enqueued -> %d\n", data);
+                  my_queue_peek(queue, &data); printf("Peeked -> %d\n", data);
+                  while(!my_queue_is_empty(queue))
+                  {
+                      my_queue_dequeue(queue, &data); printf("Dequeued -> %d\n", data);
+                  }
+                  my_queue_dtor(queue);
