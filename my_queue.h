@@ -19,10 +19,6 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #ifndef __MY_QUEUE_H
 #define __MY_QUEUE_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <stdbool.h>
 
 // Change the data type to be held in the stack here.
@@ -38,9 +34,5 @@ int my_queue_enqueue(my_queue_t *, DATA_TYPE_t);
 int my_queue_dequeue(my_queue_t *, DATA_TYPE_t *);
 int my_queue_peek(my_queue_t *, DATA_TYPE_t *);
 bool my_queue_is_empty(my_queue_t *);
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif
