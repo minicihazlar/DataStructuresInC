@@ -19,10 +19,6 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #ifndef __MY_STACK_H
 #define __MY_STACK_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <stdbool.h>
 
 // Change the data type to be held in the stack here.
@@ -38,9 +34,5 @@ int my_stack_push(my_stack_t *, DATA_TYPE_t);
 int my_stack_pop(my_stack_t *, DATA_TYPE_t *);
 int my_stack_peek(my_stack_t *, DATA_TYPE_t *);
 bool my_stack_is_empty(my_stack_t *);
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif
