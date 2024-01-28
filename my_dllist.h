@@ -19,10 +19,6 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #ifndef __MY_DLLIST_H
 #define __MY_DLLIST_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <stddef.h>
 
 // Change the data type to be held in the linked list here.
@@ -43,9 +39,5 @@ int my_dllist_pop_at(my_dllist_t *, DATA_TYPE_t *, size_t);
 int my_dllist_iterator_start(my_dllist_t *, DATA_TYPE_t *);
 int my_dllist_iterator_next(my_dllist_t *, DATA_TYPE_t *);
 void my_dllist_reverse(my_dllist_t *);
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif
