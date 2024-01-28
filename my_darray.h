@@ -19,10 +19,6 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #ifndef __MY_DARRAY_H
 #define __MY_DARRAY_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <stddef.h>
 
 // Change the data type to be held in the dynamic array here.
@@ -37,9 +33,5 @@ int my_darray_resize(my_darray_t *, size_t);
 size_t my_darray_get_size(my_darray_t *);
 int my_darray_add_at(my_darray_t *, DATA_TYPE_t, size_t);
 int my_darray_get_at(my_darray_t *, DATA_TYPE_t *, size_t);
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif
